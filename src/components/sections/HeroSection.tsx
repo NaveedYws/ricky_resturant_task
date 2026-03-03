@@ -12,37 +12,52 @@ const HeroSection = () => {
       <div className="absolute inset-0 overlay-dark" />
 
       <div className="relative z-10 text-center container-restaurant">
-        <motion.h2
+        <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-xl md:text-2xl italic text-primary mb-4"
+          className="font-body text-sm tracking-[0.4em] uppercase text-primary inline-block mb-4"
         >
-          Welcome To Savoria
-        </motion.h2>
+          Welcome to Savoria
+        </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-5xl md:text-6xl lg:text-8xl font-bold italic leading-tight mb-8"
-          style={{ color: "hsl(0 0% 100%)" }}
+          className="font-display text-5xl md:text-6xl lg:text-8xl font-bold text-foreground leading-tight mb-6"
         >
           Eat What Makes
           <br />
-          You Happy
+          <span className="text-gradient-gold">You Happy</span>
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="font-body text-lg md:text-xl text-foreground/70 max-w-xl mx-auto mb-10"
+        >
+          Experience exquisite flavors crafted with passion and the freshest ingredients in an unforgettable atmosphere.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link
-            to="/contact"
-            className="inline-block bg-primary text-primary-foreground px-10 py-4 font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
+            to="/menu"
+            className="bg-primary text-primary-foreground px-10 py-4 font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
           >
-            Contact Us
+            Explore Menu
+          </Link>
+          <Link
+            to="/contact"
+            className="border border-primary text-primary px-10 py-4 font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+          >
+            Reserve a Table
           </Link>
         </motion.div>
       </div>
@@ -57,7 +72,7 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-primary/40 flex items-start justify-center p-1.5"
+          className="w-6 h-10 rounded-full border-2 border-foreground/30 flex items-start justify-center p-1.5"
         >
           <div className="w-1 h-2 bg-primary rounded-full" />
         </motion.div>

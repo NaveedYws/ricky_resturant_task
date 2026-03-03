@@ -4,11 +4,11 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { to: "/", label: "HOME" },
-  { to: "/about", label: "ABOUT US" },
-  { to: "/menu", label: "MENU" },
-  { to: "/gallery", label: "GALLERY" },
-  { to: "/contact", label: "CONTACT US" },
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/menu", label: "Menu" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const Navbar = () => {
@@ -28,8 +28,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-background ${
-        scrolled ? "shadow-md" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-background/95 backdrop-blur-md shadow-lg shadow-background/20"
+          : "bg-transparent"
       }`}
     >
       <div className="container-restaurant flex items-center justify-between h-20">
@@ -43,8 +45,8 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`font-body text-sm tracking-widest transition-colors duration-300 hover:text-gold-dark ${
-                location.pathname === link.to ? "text-primary font-bold" : "text-primary"
+              className={`font-body text-sm tracking-widest uppercase transition-colors duration-300 hover:text-primary ${
+                location.pathname === link.to ? "text-primary" : "text-foreground/80"
               }`}
             >
               {link.label}
@@ -52,7 +54,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/contact"
-            className="ml-4 bg-primary text-primary-foreground px-7 py-2.5 text-sm font-body tracking-widest transition-all duration-300 hover:bg-gold-dark"
+            className="ml-4 border border-primary px-6 py-2 text-sm font-body tracking-widest uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
           >
             Reservation
           </Link>
@@ -61,7 +63,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-primary p-2"
+          className="md:hidden text-foreground p-2"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,15 +77,15 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-t border-border overflow-hidden"
+            className="md:hidden bg-background/98 backdrop-blur-md border-t border-border overflow-hidden"
           >
             <div className="container-restaurant py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`font-body text-sm tracking-widest py-2 transition-colors duration-300 hover:text-gold-dark ${
-                    location.pathname === link.to ? "text-primary font-bold" : "text-primary"
+                  className={`font-body text-sm tracking-widest uppercase py-2 transition-colors duration-300 hover:text-primary ${
+                    location.pathname === link.to ? "text-primary" : "text-foreground/80"
                   }`}
                 >
                   {link.label}
@@ -91,7 +93,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
-                className="mt-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-body tracking-widest text-center transition-all duration-300 hover:bg-gold-dark"
+                className="mt-2 border border-primary px-6 py-3 text-sm font-body tracking-widest uppercase text-primary text-center transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
               >
                 Reservation
               </Link>

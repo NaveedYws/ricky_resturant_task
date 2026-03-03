@@ -36,9 +36,9 @@ const AboutPreview = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionHeading subtitle="About Us" title="EAT WHAT MAKES YOU HAPPY" centered={false} />
+            <SectionHeading subtitle="About Us" title="A Culinary Journey Like No Other" centered={false} />
             <p className="font-body text-muted-foreground leading-relaxed mb-6">
-              Get the food that makes you drool! Savoria is one of the finest restaurants to dine-in with the best combination of spices according to your taste. Our professional staff is at your service with food delivery, event catering, and other services.
+              At Savoria, we believe food is more than sustenance — it's an art form. Our award-winning chefs combine time-honored techniques with innovative flair to deliver an unforgettable dining experience.
             </p>
             <p className="font-body text-muted-foreground leading-relaxed mb-8">
               Every dish tells a story, crafted from the freshest locally sourced ingredients with meticulous attention to flavor, texture, and presentation.
@@ -57,7 +57,7 @@ const AboutPreview = () => {
               to="/about"
               className="inline-block bg-primary text-primary-foreground px-8 py-3 font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
             >
-              Order Now
+              Our Story
             </Link>
           </motion.div>
         </div>

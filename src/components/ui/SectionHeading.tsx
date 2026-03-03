@@ -17,7 +17,7 @@ const SectionHeading = ({ subtitle, title, centered = true, light = false }: Sec
       className={`mb-12 md:mb-16 ${centered ? "text-center" : ""}`}
     >
       <span className="font-body text-sm tracking-[0.3em] uppercase text-primary">{subtitle}</span>
-      <h2 className={`font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 ${light ? "text-primary-foreground" : "text-foreground"}`}>
+      <h2 className={`font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 ${light ? "text-foreground" : "text-foreground"}`}>
         {title}
       </h2>
       <div className={`mt-4 h-[2px] w-16 bg-primary ${centered ? "mx-auto" : ""}`} />
