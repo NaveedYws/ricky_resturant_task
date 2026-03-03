@@ -56,8 +56,9 @@ export default {
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
         },
-        cream: "hsl(var(--warm-cream))",
         "warm-brown": "hsl(var(--warm-brown))",
+        "hero-overlay": "hsl(var(--hero-overlay))",
+        cream: "hsl(var(--warm-cream))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
