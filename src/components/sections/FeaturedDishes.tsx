@@ -1,5 +1,6 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import DishCard from "@/components/ui/DishCard";
+import { Link } from "react-router-dom";
 import dish1 from "@/assets/dish-1.jpg";
 import dish2 from "@/assets/dish-2.jpg";
 import dish3 from "@/assets/dish-3.jpg";
@@ -14,13 +15,21 @@ const dishes = [
 
 const FeaturedDishes = () => {
   return (
-    <section className="section-padding bg-secondary">
+    <section className="section-padding bg-cream">
       <div className="container-restaurant">
-        <SectionHeading subtitle="Our Specialties" title="Featured Dishes" />
+        <SectionHeading subtitle="Catering Menu" title="Grill Feast" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {dishes.map((dish) => (
             <DishCard key={dish.name} {...dish} />
           ))}
+        </div>
+        <div className="text-center mt-10">
+          <Link
+            to="/menu"
+            className="inline-block bg-primary text-primary-foreground px-10 py-3.5 rounded font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
+          >
+            More Menu
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const reviews = [
   {
@@ -22,7 +22,7 @@ const reviews = [
 
 const Testimonials = () => {
   return (
-    <section className="section-padding bg-secondary">
+    <section className="section-padding bg-background">
       <div className="container-restaurant">
         <SectionHeading subtitle="Testimonials" title="What Our Guests Say" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -33,8 +33,9 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-card p-8 rounded-lg border border-border"
+              className="bg-cream p-8 rounded-lg shadow-sm relative"
             >
+              <Quote size={32} className="text-primary/20 absolute top-4 right-4" />
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: review.rating }).map((_, j) => (
                   <Star key={j} size={16} className="fill-primary text-primary" />

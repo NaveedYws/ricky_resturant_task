@@ -16,7 +16,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-body text-sm tracking-[0.4em] uppercase text-primary inline-block mb-4"
+          className="font-body text-sm tracking-[0.4em] uppercase text-white/80 inline-block mb-4"
         >
           Welcome to Savoria
         </motion.span>
@@ -25,7 +25,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-display text-5xl md:text-6xl lg:text-8xl font-bold text-foreground leading-tight mb-6"
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-tight mb-6"
         >
           Eat What Makes
           <br />
@@ -36,7 +36,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="font-body text-lg md:text-xl text-foreground/70 max-w-xl mx-auto mb-10"
+          className="font-body text-base sm:text-lg md:text-xl text-white/70 max-w-xl mx-auto mb-10"
         >
           Experience exquisite flavors crafted with passion and the freshest ingredients in an unforgettable atmosphere.
         </motion.p>
@@ -49,13 +49,13 @@ const HeroSection = () => {
         >
           <Link
             to="/menu"
-            className="bg-primary text-primary-foreground px-10 py-4 font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
+            className="bg-primary text-primary-foreground px-10 py-4 rounded font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
           >
             Explore Menu
           </Link>
           <Link
             to="/contact"
-            className="border border-primary text-primary px-10 py-4 font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+            className="border-2 border-white/40 text-white px-10 py-4 rounded font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-white hover:text-foreground"
           >
             Reserve a Table
           </Link>
@@ -72,7 +72,7 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-foreground/30 flex items-start justify-center p-1.5"
+          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5"
         >
           <div className="w-1 h-2 bg-primary rounded-full" />
         </motion.div>

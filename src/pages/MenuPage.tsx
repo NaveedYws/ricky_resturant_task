@@ -37,7 +37,7 @@ const MenuPage = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-5xl md:text-6xl font-bold text-foreground"
+            className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white"
           >
             Our Menu
           </motion.h1>
@@ -48,16 +48,15 @@ const MenuPage = () => {
         <div className="container-restaurant">
           <SectionHeading subtitle="Curated Selection" title="Explore Our Dishes" />
 
-          {/* Category filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-6 py-2 font-body text-sm tracking-widest uppercase border transition-all duration-300 ${
+                className={`px-5 sm:px-6 py-2 font-body text-xs sm:text-sm tracking-widest uppercase rounded transition-all duration-300 ${
                   active === cat
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "border-border text-muted-foreground hover:border-primary hover:text-primary"
+                    ? "bg-primary text-primary-foreground"
+                    : "border border-border text-muted-foreground hover:border-primary hover:text-primary"
                 }`}
               >
                 {cat}
