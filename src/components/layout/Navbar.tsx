@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  { to: "/about", label: "About Us" },
   { to: "/menu", label: "Menu" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/contact", label: "Contact" },
+  { to: "/contact", label: "Contact Us" },
 ];
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg shadow-background/20"
+          ? "bg-background/95 backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
@@ -40,13 +40,15 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               className={`font-body text-sm tracking-widest uppercase transition-colors duration-300 hover:text-primary ${
-                location.pathname === link.to ? "text-primary" : "text-foreground/80"
+                location.pathname === link.to
+                  ? "text-primary"
+                  : scrolled ? "text-foreground/80" : "text-white/90"
               }`}
             >
               {link.label}
@@ -54,7 +56,7 @@ const Navbar = () => {
           ))}
           <Link
             to="/contact"
-            className="ml-4 border border-primary px-6 py-2 text-sm font-body tracking-widest uppercase text-primary transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+            className="ml-4 bg-primary px-6 py-2.5 rounded text-sm font-body tracking-widest uppercase text-primary-foreground transition-all duration-300 hover:bg-gold-dark"
           >
             Reservation
           </Link>
@@ -63,7 +65,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground p-2"
+          className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,7 +79,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/98 backdrop-blur-md border-t border-border overflow-hidden"
+            className="lg:hidden bg-background border-t border-border overflow-hidden shadow-lg"
           >
             <div className="container-restaurant py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -93,7 +95,7 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
-                className="mt-2 border border-primary px-6 py-3 text-sm font-body tracking-widest uppercase text-primary text-center transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
+                className="mt-2 bg-primary px-6 py-3 rounded text-sm font-body tracking-widest uppercase text-primary-foreground text-center transition-all duration-300 hover:bg-gold-dark"
               >
                 Reservation
               </Link>

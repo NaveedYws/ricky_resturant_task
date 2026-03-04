@@ -36,7 +36,7 @@ const Gallery = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-5xl md:text-6xl font-bold text-foreground"
+            className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white"
           >
             Gallery
           </motion.h1>
@@ -47,7 +47,7 @@ const Gallery = () => {
         <div className="container-restaurant">
           <SectionHeading subtitle="Visual Journey" title="A Feast for the Eyes" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[250px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[250px]">
             {images.map((img, i) => (
               <motion.div
                 key={i}
@@ -63,8 +63,8 @@ const Gallery = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/30 transition-all duration-500 flex items-end p-4">
-                  <span className="font-body text-sm text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-end p-4">
+                  <span className="font-body text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {img.alt}
                   </span>
                 </div>

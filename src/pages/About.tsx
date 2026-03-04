@@ -7,7 +7,6 @@ import gallery1 from "@/assets/gallery-1.jpg";
 const About = () => {
   return (
     <Layout>
-      {/* Hero */}
       <section className="relative h-[50vh] flex items-center justify-center">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${aboutBg})` }} />
         <div className="absolute inset-0 overlay-dark" />
@@ -15,29 +14,22 @@ const About = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display text-5xl md:text-6xl font-bold text-foreground"
+            className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white"
           >
             Our Story
           </motion.h1>
         </div>
       </section>
 
-      {/* Content */}
       <section className="section-padding bg-background">
         <div className="container-restaurant">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <SectionHeading subtitle="Since 2009" title="A Passion for Perfection" centered={false} />
               <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-                <p>
-                  Founded in 2009, Savoria began as a dream shared by two passionate chefs who believed that dining should be an experience that engages all the senses.
-                </p>
-                <p>
-                  Over the years, we've grown from a small neighborhood bistro into one of the city's most celebrated fine dining destinations, earning multiple awards and the loyalty of discerning food lovers.
-                </p>
-                <p>
-                  Our philosophy is simple: use the finest ingredients, honor culinary traditions, and never stop innovating. Every plate that leaves our kitchen is a testament to this commitment.
-                </p>
+                <p>Founded in 2009, Savoria began as a dream shared by two passionate chefs who believed that dining should be an experience that engages all the senses.</p>
+                <p>Over the years, we've grown from a small neighborhood bistro into one of the city's most celebrated fine dining destinations.</p>
+                <p>Our philosophy is simple: use the finest ingredients, honor culinary traditions, and never stop innovating.</p>
               </div>
             </div>
             <motion.div
@@ -45,14 +37,13 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <img src={gallery1} alt="Chef at work" className="w-full h-[450px] object-cover rounded-lg" loading="lazy" />
+              <img src={gallery1} alt="Chef at work" className="w-full h-[350px] sm:h-[450px] object-cover rounded-lg shadow-lg" loading="lazy" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding bg-cream">
         <div className="container-restaurant">
           <SectionHeading subtitle="Our Values" title="What Drives Us" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -67,7 +58,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="bg-card p-8 rounded-lg border border-border text-center"
+                className="bg-background p-8 rounded-lg shadow-md text-center"
               >
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">{item.title}</h3>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.desc}</p>

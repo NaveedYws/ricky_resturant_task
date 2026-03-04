@@ -14,7 +14,7 @@ const DishCard = ({ image, name, description, price }: DishCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
-      className="group bg-card rounded-lg overflow-hidden border border-border hover:border-primary/30 transition-all duration-500"
+      className="group bg-background rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500"
     >
       <div className="relative overflow-hidden aspect-square">
         <img
@@ -23,7 +23,6 @@ const DishCard = ({ image, name, description, price }: DishCardProps) => {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-all duration-500" />
       </div>
       <div className="p-5">
         <div className="flex items-baseline justify-between mb-2">
