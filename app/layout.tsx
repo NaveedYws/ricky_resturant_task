@@ -20,27 +20,35 @@ const lato = Lato({
 
 export const metadata: Metadata = {
     title: {
-        default: "Savoria Restaurant | Fine Dining Experience",
-        template: "%s | Savoria Restaurant",
+        default: "Ricky’s Restaurant | Authentic Dining Experience",
+        template: "%s | Ricky’s Restaurant",
     },
     description:
-        "Experience exquisite flavors crafted with passion and the freshest ingredients at Savoria Restaurant.",
-    keywords: ["restaurant", "fine dining", "gourmet", "culinary", "Savoria"],
-    authors: [{ name: "Savoria Team" }],
-    creator: "Savoria Restaurant",
+        "Enjoy delicious meals, fresh ingredients, and a warm atmosphere at Ricky’s Restaurant. Discover a perfect place for family dining and great food.",
+    keywords: [
+        "Ricky’s Restaurant",
+        "restaurant",
+        "family dining",
+        "fresh food",
+        "best restaurant",
+        "dining experience"
+    ],
+    authors: [{ name: "Ricky’s Restaurant Team" }],
+    creator: "Ricky’s Restaurant",
     openGraph: {
-        title: "Savoria Restaurant | Fine Dining Experience",
+        title: "Ricky’s Restaurant | Authentic Dining Experience",
         description:
-            "Experience exquisite flavors crafted with passion and the freshest ingredients at Savoria Restaurant.",
-        url: "https://savoria-restaurant.com",
-        siteName: "Savoria",
+            "Enjoy delicious meals, fresh ingredients, and a warm atmosphere at Ricky’s Restaurant.",
+        url: "https://rickyrestaurants.com",
+        siteName: "Ricky’s Restaurant",
         locale: "en_US",
         type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Savoria Restaurant | Fine Dining Experience",
-        description: "Experience exquisite flavors crafted with passion and the freshest ingredients at Savoria Restaurant.",
+        title: "Ricky’s Restaurant | Authentic Dining Experience",
+        description:
+            "Enjoy delicious meals, fresh ingredients, and a warm atmosphere at Ricky’s Restaurant.",
     },
     robots: {
         index: true,
