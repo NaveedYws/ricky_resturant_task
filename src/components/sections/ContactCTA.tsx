@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const ContactCTA = () => {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: `url(${heroBg})` }}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt="Savoria Restaurant Background"
+        fill
+        className="object-cover opacity-100" // We'll rely on the overlay-dark div
+        sizes="100vw"
       />
       <div className="absolute inset-0 overlay-dark" />
 
@@ -23,7 +28,7 @@ const ContactCTA = () => {
             On Your Desired Time
           </h2>
           <Link
-            to="/contact"
+            href="/contact"
             className="inline-block bg-primary text-primary-foreground px-10 py-4 rounded font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
           >
             Order Now

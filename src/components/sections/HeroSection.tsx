@@ -1,13 +1,19 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt="Savoria Restaurant Fine Dining"
+        fill
+        priority
+        className="object-cover"
+        quality={90}
       />
       <div className="absolute inset-0 overlay-dark" />
 
@@ -48,13 +54,13 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Link
-            to="/menu"
+            href="/menu"
             className="bg-primary text-primary-foreground px-10 py-4 rounded font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
           >
             Explore Menu
           </Link>
           <Link
-            to="/contact"
+            href="/contact"
             className="border-2 border-white/40 text-white px-10 py-4 rounded font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-white hover:text-foreground"
           >
             Reserve a Table

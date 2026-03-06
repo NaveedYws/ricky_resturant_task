@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { Instagram, Facebook, Twitter, MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
@@ -12,15 +14,16 @@ const Footer = () => {
             <div className="space-y-3 font-body text-sm text-white/70">
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
-                <span>123 Gourmet Avenue, Downtown, NY 10001</span>
+                <span>Shop No. 5, Marina Pearl View Hotel Apt.,Waterfront Al Masara Street, Dubai Marina </span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={16} className="text-primary shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+971 54 339 2616</span>
+                <span>+971 4 514 7066</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={16} className="text-primary shrink-0" />
-                <span>info@savoria.com</span>
+                <span>director@rickyrestaurants.com</span>
               </div>
             </div>
           </div>
@@ -29,10 +32,12 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg font-semibold text-primary mb-4">Services</h4>
             <div className="flex flex-col gap-2 font-body text-sm text-white/70">
-              <span>Event Party Catering</span>
-              <span>Wedding Venue Catering</span>
-              <span>Wedding Cake / Pastry</span>
-              <span>Private Chef Service</span>
+              <span>Yacht Party Catering In Dubai</span>
+              <span>Birthday Party Catering</span>
+              <span>Wedding Catering in dubai</span>
+              <span>Business Party Catering</span>
+              <span>Private Catering</span>
+
             </div>
           </div>
 
@@ -40,10 +45,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg font-semibold text-primary mb-4">Quick Links</h4>
             <div className="flex flex-col gap-2">
-              {["Home", "About", "Menu", "Gallery", "Contact"].map((item) => (
+              {["Reservation", "Privacy Policy", "Terms & Conditions"].map((item) => (
                 <Link
                   key={item}
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                   className="font-body text-sm text-white/70 hover:text-primary transition-colors"
                 >
                   {item}
@@ -85,7 +90,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="font-body text-xs text-white/50">
-            © {new Date().getFullYear()} Savoria Restaurant. All rights reserved.
+            © {new Date().getFullYear()} Ricky Restaurant. All rights reserved.
           </p>
         </div>
       </div>

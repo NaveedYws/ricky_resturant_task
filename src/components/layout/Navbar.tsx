@@ -1,8 +1,12 @@
+"use client";
+import Image from "next/image";
+
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import img1 from "../../../public/images/rickylogo-2048x459.png"
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
@@ -14,7 +18,7 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -24,38 +28,37 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? "bg-background/95 backdrop-blur-md shadow-md"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container-restaurant flex items-center justify-between h-20">
-        <Link to="/" className="font-display text-2xl font-bold tracking-wider text-primary">
+        {/* <Link href="/" className="font-display text-2xl font-bold tracking-wider text-primary">
           SAVORIA
-        </Link>
-
-        {/* Desktop links */}
+        </Link> */}
+<div className="flex items-center">
+ <Image src={img1} alt="logo" width={140} height={60} />
+</div>        {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.to}
-              to={link.to}
-              className={`font-body text-sm tracking-widest uppercase transition-colors duration-300 hover:text-primary ${
-                location.pathname === link.to
+              href={link.to}
+              className={`font-body text-sm tracking-widest uppercase transition-colors duration-300 hover:text-primary ${pathname === link.to
                   ? "text-primary"
                   : scrolled ? "text-foreground/80" : "text-white/90"
-              }`}
+                }`}
             >
               {link.label}
             </Link>
           ))}
           <Link
-            to="/contact"
+            href="/contact"
             className="ml-4 bg-primary px-6 py-2.5 rounded text-sm font-body tracking-widest uppercase text-primary-foreground transition-all duration-300 hover:bg-gold-dark"
           >
             Reservation
@@ -85,16 +88,15 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
-                  to={link.to}
-                  className={`font-body text-sm tracking-widest uppercase py-2 transition-colors duration-300 hover:text-primary ${
-                    location.pathname === link.to ? "text-primary" : "text-foreground/80"
-                  }`}
+                  href={link.to}
+                  className={`font-body text-sm tracking-widest uppercase py-2 transition-colors duration-300 hover:text-primary ${pathname === link.to ? "text-primary" : "text-foreground/80"
+                    }`}
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
-                to="/contact"
+                href="/contact"
                 className="mt-2 bg-primary px-6 py-3 rounded text-sm font-body tracking-widest uppercase text-primary-foreground text-center transition-all duration-300 hover:bg-gold-dark"
               >
                 Reservation

@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import aboutImg from "@/assets/about-bg.jpg";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const stats = [
@@ -19,13 +21,14 @@ const AboutPreview = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative"
+            className="relative h-[350px] sm:h-[400px] lg:h-[500px]"
           >
-            <img
-              src={aboutImg}
+            <Image
+              src="/images/img-1.jpg"
               alt="Savoria restaurant interior with warm candlelit atmosphere"
-              className="w-full h-[350px] sm:h-[400px] lg:h-[500px] object-cover rounded-lg shadow-lg"
-              loading="lazy"
+              fill
+              className="object-cover rounded-lg shadow-lg"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute -bottom-4 -right-4 w-28 h-28 border-2 border-primary rounded-lg hidden lg:block" />
           </motion.div>
@@ -54,7 +57,7 @@ const AboutPreview = () => {
             </div>
 
             <Link
-              to="/about"
+              href="/about"
               className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded font-body text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark"
             >
               Explore More
