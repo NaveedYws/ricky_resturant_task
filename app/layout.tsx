@@ -21,7 +21,7 @@ const lato = Lato({
 export const metadata: Metadata = {
     title: {
         default: "Ricky’s Restaurant | Authentic Dining Experience",
-        template: "%s | Ricky’s Restaurant",
+        template: "%s | Ricky’s Restaurants",
     },
     description:
         "Enjoy delicious meals, fresh ingredients, and a warm atmosphere at Ricky’s Restaurant. Discover a perfect place for family dining and great food.",
