@@ -24,7 +24,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-body text-sm tracking-[0.4em] uppercase text-white/80 inline-block mb-4"
         >
-          Welcome to Savoria
+         
         </motion.span>
 
         <motion.h1
